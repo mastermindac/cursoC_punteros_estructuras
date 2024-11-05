@@ -1,12 +1,21 @@
 #include <stdio.h>
 #include <string.h>
+#include "utils_consola.h"
+
+#define MAXLINE 1000
 
 int trim(char s[]);
 
 int main(int argc, char *argv[]) {
 
-    char linea[]="Esta es una primera prueba        ";
+    //char linea[]="Esta es una primera prueba        ";
+    char linea[MAXLINE];
     int tamanyoLinea=0;
+    int len=0;
+
+    /*Pedimos linea*/
+    printf("Escribe una linea\n");
+    len=getline(linea,MAXLINE);
 
     /*Usamos trim*/
     tamanyoLinea=trim(linea);

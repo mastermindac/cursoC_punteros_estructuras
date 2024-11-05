@@ -1,0 +1,1 @@
+int getline(char line[], int maxline); /*Función que captura una línea del usuario y la almacena en el array*/
