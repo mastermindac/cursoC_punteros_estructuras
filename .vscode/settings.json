@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "utils_consola.h": "c"
+        "utils_consola.h": "c",
+        "stdio.h": "c"
     }
 }
