@@ -3,6 +3,7 @@
         "utils_consola.h": "c",
         "stdio.h": "c",
         "utils_algoritmos.h": "c",
-        "ctype.h": "c"
+        "ctype.h": "c",
+        "string.h": "c"
     }
 }
