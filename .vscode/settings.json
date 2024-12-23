@@ -2,6 +2,7 @@
     "files.associations": {
         "utils_consola.h": "c",
         "stdio.h": "c",
-        "utils_algoritmos.h": "c"
+        "utils_algoritmos.h": "c",
+        "ctype.h": "c"
     }
 }
