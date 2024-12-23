@@ -4,6 +4,7 @@
         "stdio.h": "c",
         "utils_algoritmos.h": "c",
         "ctype.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "utils_tree.h": "c"
     }
 }
