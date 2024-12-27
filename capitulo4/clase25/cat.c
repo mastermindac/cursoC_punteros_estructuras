@@ -11,15 +11,36 @@ void filecopy(FILE *, FILE *);
 
 int main(int argc, char *argv[])
 {
-	FILE *fp;
-
-    if((fp=fopen("receta.txt","r"))==NULL){
-        printf("cat: no puede abrir el fichero receta.txt");
-        return 1;
+	FILE *fp,*fp2;
+    if(argc==1){
+        printf("Uso de cat.exe\n");
+        printf("cat.exe ruta_fichero : Imprime fichero por pantalla\n");
+        printf("cat.exe ruta_fichero1 ruta_fichero2: Copia fichero1 en fichero2\n");
     }else{
-        //Aquí copiaremos el fichero leído a la consola
-        filecopy(fp,stdout);
-        fclose(fp);
+        if(argc>=2)
+            //Abrimos el primer fichero en modo lectura
+            if((fp=fopen(argv[1],"r"))==NULL){
+                printf("cat: no puede abrir el fichero %s",argv[1]);
+                return 1;
+            }else{
+                //Comprobamos si solo imprimimos por pantalla
+                if(argc==2){
+                    filecopy(fp,stdout);
+                    fclose(fp);
+                }
+                //Comprobamos si copiamos
+                if(argc==3){
+                    //Debemos abrir el segundo fichero
+                    if((fp2=fopen(argv[2],"w"))==NULL){
+                        printf("cat: no puede abrir el fichero %s",argv[2]);
+                        return 1;
+                    }else{
+                        filecopy(fp,fp2);
+                        fclose(fp2);
+                        fclose(fp);
+                    }
+                }
+            }
     }
 	
 	return 0;
