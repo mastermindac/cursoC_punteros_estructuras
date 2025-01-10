@@ -12,7 +12,6 @@ void filecopy(FILE *, FILE *);
 int main(int argc, char *argv[])
 {
 	FILE *fp,*fp2;
-    freopen("error.log","w",stderr);
     if(argc==1){
         printf("Uso de cat.exe\n");
         printf("cat.exe ruta_fichero : Imprime fichero por pantalla\n");
@@ -21,8 +20,7 @@ int main(int argc, char *argv[])
         if(argc>=2)
             //Abrimos el primer fichero en modo lectura
             if((fp=fopen(argv[1],"r"))==NULL){
-                //printf("cat: no puede abrir el fichero %s",argv[1]);
-                fprintf(stderr,"cat: no puede abrir el fichero %s",argv[1]);
+                printf("cat: no puede abrir el fichero %s",argv[1]);
                 return 1;
             }else{
                 //Comprobamos si solo imprimimos por pantalla
@@ -34,8 +32,7 @@ int main(int argc, char *argv[])
                 if(argc==3){
                     //Debemos abrir el segundo fichero
                     if((fp2=fopen(argv[2],"w"))==NULL){
-                        //printf("cat: no puede abrir el fichero %s",argv[2]);
-                        fprintf(stderr,"cat: no puede abrir el fichero %s",argv[2]);
+                        printf("cat: no puede abrir el fichero %s",argv[2]);
                         return 1;
                     }else{
                         filecopy(fp,fp2);

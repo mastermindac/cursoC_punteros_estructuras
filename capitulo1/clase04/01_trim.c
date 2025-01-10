@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 
     /*Usamos trim*/
     tamanyoLinea=trim(linea);
-    /*Imprimimos la línea después de pasar por trim y el tamanyo*/
+    /*Imprimimos la línea desputiués de pasar por trim y el tamanyo*/
     printf("La linea final es --%s--\n",linea);
     printf("El tamanyo final es: %d\n",tamanyoLinea);
 
